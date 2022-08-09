@@ -27,7 +27,7 @@ This is my top 5 pick
 ** YouTube Channels / Videos
 ** Other
 *** Heptabase
-Tools I use for note taking. [[heptabase.com][Heptabase]]
+Tools I use for note taking. [[https://heptabase.com][Heptabase]]
 
 * Stuff I'm grateful for
 ** Visit Sydney

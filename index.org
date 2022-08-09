@@ -1,4 +1,1 @@
-#+title: Index
-
-* This is my blog
-Example
+#+INCLUDE: "./2022.org"
