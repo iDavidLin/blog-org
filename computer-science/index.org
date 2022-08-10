@@ -1,0 +1,6 @@
+#+title: Computer Science
+
+* Notes
+This is just my algorithem notes.
+** Binary Search
+[[file:algorithm/binary-search.org][Binary Search Code Template]]

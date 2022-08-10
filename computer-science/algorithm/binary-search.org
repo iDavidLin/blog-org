@@ -1,0 +1,66 @@
+#+title: Binary Search
+* Complexity
+Time complexity O(logn)
+Space complexity O(1)
+* Code template
+#+begin_src java
+int binarySearch(int[] nums, int target) {
+// corner case
+  if (nums == null || nums.length == 0) {
+    return -1;
+  }
+
+  int start = 0, end = nums.length - 1;
+  // 1: start + 1 < end
+   while (start + 1 < end) {
+  // 2：start + (end - start) / 2
+     int mid = start + (end - start) / 2;
+     // 3：=, <, > 3 condition，mid, don't have to worry about + 1 or - 1;
+     if (nums[mid] == target) {
+       return mid;
+     } else if (nums[mid] < target) {
+       start = mid;
+     } else {
+       end = mid;
+     }
+   }
+
+   if (nums[start] == target) {
+     return start;
+   }
+
+   if(nums[end] == target) {
+     return end;
+   }
+
+   return -1;
+}
+#+end_src
+
+** Why is start + 1 < end?
+Tipically, the binary search code would look like this
+
+#+begin_src java
+   int start = 0, end = nums.length - 1;
+   while (start < end) {
+     int mid = start + (end - start) / 2;
+     if (nums[mid] == target) {
+       return mid;
+     } else if (nums[mid] < target) {
+       start = mid + 1;
+     } else {
+       end = mid - 1;
+     }
+   }
+
+   if(nums[start] == target) {
+     return start;
+   }
+#+end_src
+
+The probelm with this code is:
+if nums[] {1, 1}, target = 1; with the above code, start will be 0, end will be 1. and mid will always be 0; We would have a infinite loop.
+
+** Why start + (end - start) / 2
+To avoid stack overflow. say start + end > MAX_INT.
+** Due to the condition check we don't have to worry about mid - 1 or mid + 1

@@ -6,7 +6,7 @@
 <!-- 2022-08-10 Wed 23:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Readme</title>
+<title>Binary Search</title>
 <meta name="author" content="David" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -205,10 +205,115 @@
    </ul>
 </div>
 <div id="content" class="content">
-<h1 class="title">Readme</h1>
+<h1 class="title">Binary Search</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5b80644">1. Complexity</a></li>
+<li><a href="#orgc1c49b8">2. Code template</a>
+<ul>
+<li><a href="#orgce49249">2.1. Why is start + 1 &lt; end?</a></li>
+<li><a href="#org94031b9">2.2. Why start + (end - start) / 2</a></li>
+<li><a href="#orge7fb3ec">2.3. Due to the condition check we don&rsquo;t have to worry about mid - 1 or mid + 1</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5b80644" class="outline-2">
+<h2 id="org5b80644"><span class="section-number-2">1.</span> Complexity</h2>
+<div class="outline-text-2" id="text-1">
 <p>
-#+INCLUDE 2022.org
+Time complexity O(logn)
+Space complexity O(1)
 </p>
+</div>
+</div>
+<div id="outline-container-orgc1c49b8" class="outline-2">
+<h2 id="orgc1c49b8"><span class="section-number-2">2.</span> Code template</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">binarySearch</span><span style="color: #51afef;">(</span><span style="color: #ECBE7B;">int</span><span style="color: #c678dd;">[]</span> <span style="color: #dcaeea;">nums</span>, <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">target</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">corner case</span>
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>nums == <span style="color: #a9a1e1;">null</span> || nums.length == <span style="color: #da8548; font-weight: bold;">0</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    <span style="color: #51afef;">return</span> -<span style="color: #da8548; font-weight: bold;">1</span>;
+  <span style="color: #c678dd;">}</span>
+
+  <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">start</span> = <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #dcaeea;">end</span> = nums.length - <span style="color: #da8548; font-weight: bold;">1</span>;
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">1: start + 1 &lt; end</span>
+   <span style="color: #51afef;">while</span> <span style="color: #c678dd;">(</span>start + <span style="color: #da8548; font-weight: bold;">1</span> &lt; end<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">2&#65306;start + (end - start) / 2</span>
+     <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">mid</span> = start + <span style="color: #98be65;">(</span>end - start<span style="color: #98be65;">)</span> / <span style="color: #da8548; font-weight: bold;">2</span>;
+     <span style="color: #5B6268;">// </span><span style="color: #5B6268;">3&#65306;=, &lt;, &gt; 3 condition&#65292;mid, don't have to worry about + 1 or - 1;</span>
+     <span style="color: #51afef;">if</span> <span style="color: #98be65;">(</span>nums<span style="color: #a9a1e1;">[</span>mid<span style="color: #a9a1e1;">]</span> == target<span style="color: #98be65;">)</span> <span style="color: #98be65;">{</span>
+       <span style="color: #51afef;">return</span> mid;
+     <span style="color: #98be65;">}</span> <span style="color: #51afef;">else</span> <span style="color: #51afef;">if</span> <span style="color: #98be65;">(</span>nums<span style="color: #a9a1e1;">[</span>mid<span style="color: #a9a1e1;">]</span> &lt; target<span style="color: #98be65;">)</span> <span style="color: #98be65;">{</span>
+       start = mid;
+     <span style="color: #98be65;">}</span> <span style="color: #51afef;">else</span> <span style="color: #98be65;">{</span>
+       end = mid;
+     <span style="color: #98be65;">}</span>
+   <span style="color: #c678dd;">}</span>
+
+   <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>nums<span style="color: #98be65;">[</span>start<span style="color: #98be65;">]</span> == target<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+     <span style="color: #51afef;">return</span> start;
+   <span style="color: #c678dd;">}</span>
+
+   <span style="color: #51afef;">if</span><span style="color: #c678dd;">(</span>nums<span style="color: #98be65;">[</span>end<span style="color: #98be65;">]</span> == target<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+     <span style="color: #51afef;">return</span> end;
+   <span style="color: #c678dd;">}</span>
+
+   <span style="color: #51afef;">return</span> -<span style="color: #da8548; font-weight: bold;">1</span>;
+<span style="color: #51afef;">}</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgce49249" class="outline-3">
+<h3 id="orgce49249"><span class="section-number-3">2.1.</span> Why is start + 1 &lt; end?</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Tipically, the binary search code would look like this
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">   <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">start</span> = <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #dcaeea;">end</span> = nums.length - <span style="color: #da8548; font-weight: bold;">1</span>;
+   <span style="color: #51afef;">while</span> <span style="color: #51afef;">(</span>start &lt; <span style="color: #ECBE7B;">end</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
+     <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">mid</span> = start + <span style="color: #c678dd;">(</span>end - start<span style="color: #c678dd;">)</span> / <span style="color: #da8548; font-weight: bold;">2</span>;
+     <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>nums<span style="color: #98be65;">[</span>mid<span style="color: #98be65;">]</span> == target<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+       <span style="color: #51afef;">return</span> mid;
+     <span style="color: #c678dd;">}</span> <span style="color: #51afef;">else</span> <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>nums<span style="color: #98be65;">[</span>mid<span style="color: #98be65;">]</span> &lt; target<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+       start = mid + <span style="color: #da8548; font-weight: bold;">1</span>;
+     <span style="color: #c678dd;">}</span> <span style="color: #51afef;">else</span> <span style="color: #c678dd;">{</span>
+       end = mid - <span style="color: #da8548; font-weight: bold;">1</span>;
+     <span style="color: #c678dd;">}</span>
+   <span style="color: #51afef;">}</span>
+
+   <span style="color: #51afef;">if</span><span style="color: #51afef;">(</span>nums<span style="color: #c678dd;">[</span>start<span style="color: #c678dd;">]</span> == target<span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
+     <span style="color: #51afef;">return</span> start;
+   <span style="color: #51afef;">}</span>
+</pre>
+</div>
+
+<p>
+The probelm with this code is:
+if nums[] {1, 1}, target = 1; with the above code, start will be 0, end will be 1. and mid will always be 0; We would have a infinite loop.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org94031b9" class="outline-3">
+<h3 id="org94031b9"><span class="section-number-3">2.2.</span> Why start + (end - start) / 2</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+To avoid stack overflow. say start + end &gt; MAX<sub>INT</sub>.
+</p>
+</div>
+</div>
+<div id="outline-container-orge7fb3ec" class="outline-3">
+<h3 id="orge7fb3ec"><span class="section-number-3">2.3.</span> Due to the condition check we don&rsquo;t have to worry about mid - 1 or mid + 1</h3>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: David</p>
