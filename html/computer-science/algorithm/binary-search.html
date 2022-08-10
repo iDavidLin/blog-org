@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-08-10 Wed 23:53 -->
+<!-- 2022-08-11 Thu 00:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Binary Search</title>
@@ -210,19 +210,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5b80644">1. Complexity</a></li>
-<li><a href="#orgc1c49b8">2. Code template</a>
+<li><a href="#org82febd0">1. Complexity</a></li>
+<li><a href="#orgc629661">2. Code template</a>
 <ul>
-<li><a href="#orgce49249">2.1. Why is start + 1 &lt; end?</a></li>
-<li><a href="#org94031b9">2.2. Why start + (end - start) / 2</a></li>
-<li><a href="#orge7fb3ec">2.3. Due to the condition check we don&rsquo;t have to worry about mid - 1 or mid + 1</a></li>
+<li><a href="#org3ea6722">2.1. Why is start + 1 &lt; end?</a></li>
+<li><a href="#org4305979">2.2. Why start + (end - start) / 2</a></li>
+<li><a href="#org4e1ea59">2.3. Due to the condition check we don&rsquo;t have to worry about mid - 1 or mid + 1</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5b80644" class="outline-2">
-<h2 id="org5b80644"><span class="section-number-2">1.</span> Complexity</h2>
+<div id="outline-container-org82febd0" class="outline-2">
+<h2 id="org82febd0"><span class="section-number-2">1.</span> Complexity</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Time complexity O(logn)
@@ -230,8 +230,8 @@ Space complexity O(1)
 </p>
 </div>
 </div>
-<div id="outline-container-orgc1c49b8" class="outline-2">
-<h2 id="orgc1c49b8"><span class="section-number-2">2.</span> Code template</h2>
+<div id="outline-container-orgc629661" class="outline-2">
+<h2 id="orgc629661"><span class="section-number-2">2.</span> Code template</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-java"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">binarySearch</span><span style="color: #51afef;">(</span><span style="color: #ECBE7B;">int</span><span style="color: #c678dd;">[]</span> <span style="color: #dcaeea;">nums</span>, <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">target</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
@@ -269,8 +269,8 @@ Space complexity O(1)
 </div>
 </div>
 
-<div id="outline-container-orgce49249" class="outline-3">
-<h3 id="orgce49249"><span class="section-number-3">2.1.</span> Why is start + 1 &lt; end?</h3>
+<div id="outline-container-org3ea6722" class="outline-3">
+<h3 id="org3ea6722"><span class="section-number-3">2.1.</span> Why is start + 1 &lt; end?</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Tipically, the binary search code would look like this
@@ -302,22 +302,22 @@ if nums[] {1, 1}, target = 1; with the above code, start will be 0, end will be 
 </div>
 </div>
 
-<div id="outline-container-org94031b9" class="outline-3">
-<h3 id="org94031b9"><span class="section-number-3">2.2.</span> Why start + (end - start) / 2</h3>
+<div id="outline-container-org4305979" class="outline-3">
+<h3 id="org4305979"><span class="section-number-3">2.2.</span> Why start + (end - start) / 2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 To avoid stack overflow. say start + end &gt; MAX<sub>INT</sub>.
 </p>
 </div>
 </div>
-<div id="outline-container-orge7fb3ec" class="outline-3">
-<h3 id="orge7fb3ec"><span class="section-number-3">2.3.</span> Due to the condition check we don&rsquo;t have to worry about mid - 1 or mid + 1</h3>
+<div id="outline-container-org4e1ea59" class="outline-3">
+<h3 id="org4e1ea59"><span class="section-number-3">2.3.</span> Due to the condition check we don&rsquo;t have to worry about mid - 1 or mid + 1</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: David</p>
-<p class="date">Created: 2022-08-10 Wed 23:53</p>
+<p class="date">Created: 2022-08-11 Thu 00:01</p>
 </div>
 </body>
 </html>
