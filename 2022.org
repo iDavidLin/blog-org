@@ -25,6 +25,8 @@ This is my top 5 pick
 | Article                               | Notes |
 | [[https://addyosmani.com/blog/software-engineering-soft-parts/?utm_source=pocket_mylist][Software Engineering - The Soft Parts]] |       |
 ** YouTube Channels / Videos
+| Video                                                     | Notes     |
+| [[https://www.youtube.com/watch?v=ji5_MqicxSo&t=225s&ab_channel=CarnegieMellonUniversity][Randy Paush Last Lecture: Achieving Your Chilhoode Dreams]] | Inspiring |
 ** Other
 *** Heptabase
 Tools I use for note taking. [[https://heptabase.com][Heptabase]]
