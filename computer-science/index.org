@@ -4,3 +4,5 @@
 This is just my algorithem notes.
 ** Binary Search
 [[file:algorithm/binary-search.org][Binary Search Code Template]]
+** Dynamic Programming
+[[file:algorithm/unique-paths.org][Unique Paths]]
