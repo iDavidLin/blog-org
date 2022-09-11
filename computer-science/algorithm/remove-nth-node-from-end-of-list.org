@@ -1,0 +1,69 @@
+#+title: Remove Nth Node From End Of List
+* Problem
+This is the leetcode problem: Remove Nth node from end of list.
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+[[file:../../img/remove_nth-node-from-end-of-list.jpeg]]
+
+Example
+#+begin_comment
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+#+end_comment
+* Solution
+** Two pointer, one pass solution
+We can use a fase and slow pointer. Keep the slow one at N-n-1 postion. So the fast reach the end.
+Then =slow.next= is the one we want to remove. So simply remove it by
+
+#+begin_src
+slow.next = slow.next.next;
+#+end_src
+*** Code
+#+begin_src java
+/**
+ ,* Definition for singly-linked list.
+ ,* public class ListNode {
+ ,*     int val;
+ ,*     ListNode next;
+ ,*     ListNode() {}
+ ,*     ListNode(int val) { this.val = val; }
+ ,*     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ ,* }
+ ,*/
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head == null || (head.next == null && n == 1)) {
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        int j = 0;
+        while(j < n) {
+            fast = fast.next;
+            j++;
+        }
+
+        if(fast == null){          // we had reach the end, and b'c it's the nth node from the end. Means we remove the first one;
+            return head.next;
+        }
+
+        while(fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return head;
+    }
+}
+#+end_src
+*** Notes
+**** if (fast == null) return head.next;
+Means by moving n steps, we had reach the end, and b'c it's the nth node from the end, N-n-1 is the head, we remove the first one;
+**** while(fast.next != null)
+Why is (fast.next != null), not (fast != null)? The point here is to make sure when the fast reach the end, slow is at N-n-1 postion.
+
+Just found that if I use fast != null, it's a bit complicated.
+
+** One Pointer, Two Pass
+- First, iterate in the first-pass to find the length of the whole linked list -> len.
+- Second, iterate len - n - 1 nodes from start and delete the next node (which would be nth node from end).
