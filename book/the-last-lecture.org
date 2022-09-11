@@ -1,6 +1,6 @@
 #+title: The Last Lecture
 
-#+html: <p align="left"><img src="./img/the-last-lecture.jpg" width=50% /></p>
+#+html: <p align="left"><img src="../img/the-last-lecture.jpg" width=50% /></p>
 #+begin_quote
 Brick walls are there for a reason: they let us prove how badly we want things.
 The brick walls are there to stop people who don’t want it badly enough.
