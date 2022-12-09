@@ -3,11 +3,21 @@
 This is the one page of my 2022.
 
 * Learning
-** Time management
+*** Time management
 粥左罗的时间管理课程
-** Personal Brand: How to build your own IP
-** Essential Learning
-** Geekbang: Software Architecture
+*** Personal Brand: How to build your own IP
+*** Essential Learning
+*** Geekbang: Software Architecture course
+What I lean from the course is getting a better understanding of what the whole picture of architecture looks like and a very different view from the architect perspective.
+
+These are some blogs I write
+- [[https://xie.infoq.cn/article/e7b6cf4ca2d527f347d5a01d0][The Architecture of Wechat & SMS]]
+- [[https://xie.infoq.cn/article/d8db12b188f815ae40aa6ceb6][WeChat Moments Performance Analysis]]
+- [[https://xie.infoq.cn/article/171ee030c1387754af64126be][Student Management System]]
+- [[https://xie.infoq.cn/article/14eae6eff6fc4ed68b8c8b6d2][Ten Million-Level Capacity Storage Solution of Student Management System - Examination]]
+- [[https://xie.infoq.cn/article/a36b27c155930f10f5098c8fc][The Availability and Performance analytics of Sina Weibo comment]]
+- [[https://xie.infoq.cn/article/c6be75a5d04677106f2e704aa][The Micro-service design of E-commerce System]]
+- [[https://xie.infoq.cn/article/7c735d4e2afb0e6ff3053ebee][Multi-Site High Availability Architecture solution of Honor of Kings mall]]
 * Cool Stuff I Discovered This Year
 ** Books
 Reading is always a big part of my life. Just like eating, I read everyday.
@@ -30,7 +40,7 @@ This is my top picks
 ** Articles / Blog Posts
 | Article                               | Notes |
 | [[https://addyosmani.com/blog/software-engineering-soft-parts/?utm_source=pocket_mylist][Software Engineering - The Soft Parts]] |       |
-| [[https://martinfowler.com/bliki/OutcomeOverOutput.html][Outcome Over Outut]]                    |       |
+| [[https://martinfowler.com/bliki/OutcomeOverOutput.html][Outcome Over Output]]                   |       |
 ** YouTube Channels / Videos
 | Video                                                     | Notes     |
 | [[https://www.youtube.com/watch?v=ji5_MqicxSo&t=225s&ab_channel=CarnegieMellonUniversity][Randy Paush Last Lecture: Achieving Your Chilhoode Dreams]] | Inspiring |
